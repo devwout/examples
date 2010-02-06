@@ -1,0 +1,19 @@
+<h1>Generic error feedback example</h1>
+  
+<p>The following links will trigger server-side exceptions. Click them to see what the user feedback is like.</p>
+
+<p>This error is shown to the user in response to clicking a link or posting a form.</p>
+
+<p><%= link_to("Html error", :action => "error") %></p>
+
+<p>When an ajax request fails, this is what the user will see.</p>
+  
+<p><%= link_to_remote("Ajax error", :url => {:action => "error"}) %></p>
+
+<p>This is a standard error that is never caught. We use the standard rails error handling mechanism. Run the server in production to see the feedback the public gets.</p>
+
+<p><%= link_to("Uncaught html error", :action => "uncaught_error") %></p>
+
+<p>This is the ajax feedback for an error that is never caught.</p>
+
+<p><%= link_to_remote("Uncaught ajax error", :url => {:action => "uncaught_error"}) %></p>
